@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import Chronology from './Chronology.jsx';
+import { eventsInWindow, fitEvents, timelineDomain } from '../lib/timeline.js';
+
+const pageSize = 8;
 
 const labels = {
   es: {
@@ -10,8 +14,8 @@ const labels = {
     libraryLink: 'Mi biblioteca',
     chapter: '01 / EXPLORAR',
     timeline: 'Un viaje sin prisa.',
-    scale: 'Vista por capítulos · distancias no proporcionales al tiempo',
-    categories: { all: 'Todo el recorrido', cosmos: 'El cosmos', humanity: 'La humanidad', modern: 'El mundo moderno' },
+    scale: 'Eje superior lineal; tarjetas espaciadas para facilitar la lectura',
+    categories: { all: 'Todo el recorrido', cosmos: 'El cosmos', earth: 'Tierra y vida', humanity: 'Orígenes humanos', ancient: 'Mundo antiguo', medieval: 'Mundos medievales', 'early-modern': 'Conexiones globales', modern: 'Mundo moderno', contemporary: 'Mundo contemporáneo' },
     unread: 'Por leer', reading: 'En lectura', read: 'Leído',
     detail: 'EN ESTE MOMENTO',
     source: 'Consultar fuente',
@@ -19,10 +23,21 @@ const labels = {
     progress: 'Actualizar lectura en GitHub',
     library: '02 / BIBLIOTECA',
     libraryTitle: 'Otras formas de viajar.',
-    libraryNote: 'Selección de muestra. Estos libros no se presentan como fuentes verificadas de las fechas del prototipo.',
+    libraryNote: 'Recomendaciones para profundizar, no pruebas de que una fecha haya sido contrastada en esas obras. Los títulos corresponden a las obras indicadas; busca la edición y el idioma que prefieras.',
     editBooks: 'Editar biblioteca en GitHub',
-    result: 'hitos en esta vista',
-    empty: 'No hay hitos en esta categoría.',
+    result: 'hitos en esta ventana',
+    of: 'de',
+    empty: 'No hay hitos en esta ventana temporal. Desplázate, aléjate o selecciona otro periodo.',
+    previous: 'Página anterior',
+    next: 'Página siguiente',
+    pagination: 'Páginas de hitos',
+    recommendations: 'PARA SEGUIR LEYENDO',
+    recommendationNote: 'Lecturas de contexto; no fuentes contrastadas de esta fecha.',
+    pendingBooks: 'Recomendaciones de libros pendientes de seleccionar.',
+    findEdition: 'Buscar una edición',
+    duration: 'Periodo de actividad',
+    uncertainty: 'Intervalo de fecha incierta',
+    approximate: 'Fecha aproximada o convencional',
   },
   en: {
     eyebrow: 'A PERSONAL ATLAS OF TIME',
@@ -33,8 +48,8 @@ const labels = {
     libraryLink: 'My library',
     chapter: '01 / EXPLORE',
     timeline: 'Take the long way.',
-    scale: 'Chapter view · distances are not proportional to time',
-    categories: { all: 'The whole journey', cosmos: 'The cosmos', humanity: 'Humankind', modern: 'The modern world' },
+    scale: 'Linear axis above; cards spaced for comfortable reading',
+    categories: { all: 'The whole journey', cosmos: 'The cosmos', earth: 'Earth and life', humanity: 'Human origins', ancient: 'Ancient worlds', medieval: 'Medieval worlds', 'early-modern': 'Global connections', modern: 'Modern world', contemporary: 'Contemporary world' },
     unread: 'To read', reading: 'Reading', read: 'Read',
     detail: 'AT THIS MOMENT',
     source: 'View source',
@@ -42,24 +57,55 @@ const labels = {
     progress: 'Update reading on GitHub',
     library: '02 / LIBRARY',
     libraryTitle: 'Other ways to travel.',
-    libraryNote: 'Sample selection. These books are not presented as verified sources for this prototype’s dates.',
+    libraryNote: 'Recommendations for further reading, not evidence that these dates have been checked against the books. Titles identify the listed works; look for your preferred edition and language.',
     editBooks: 'Edit library on GitHub',
     result: 'events in this view',
-    empty: 'No events in this category.',
+    of: 'of',
+    empty: 'No events in this time window. Pan, zoom out, or choose another period.',
+    previous: 'Previous page',
+    next: 'Next page',
+    pagination: 'Event pages',
+    recommendations: 'READ FURTHER',
+    recommendationNote: 'Contextual reading, not checked sources for this date.',
+    pendingBooks: 'Book recommendations have not yet been selected.',
+    findEdition: 'Find an edition',
+    duration: 'Period of activity',
+    uncertainty: 'Uncertain date interval',
+    approximate: 'Approximate or conventional date',
   },
 };
 
 export default function Atlas({ events, books, reading, editUrls, language }) {
   const [category, setCategory] = useState('all');
   const [selectedId, setSelectedId] = useState(events[0].id);
+  const domain = timelineDomain(events);
+  const [window, setWindow] = useState(domain);
+  const [page, setPage] = useState(0);
   const t = labels[language];
-  const visible = events.filter((event) => category === 'all' || event.category === category);
-  const selected = events.find((event) => event.id === selectedId);
+  const matching = events.filter((event) => category === 'all' || event.category === category);
+  const visible = eventsInWindow(matching, window);
+  const pageCount = Math.max(1, Math.ceil(visible.length / pageSize));
+  const pageEvents = visible.slice(page * pageSize, (page + 1) * pageSize);
+  const selected = pageEvents.find((event) => event.id === selectedId) ?? pageEvents[0];
+  const recommended = selected ? books.filter((book) => selected.books.includes(book.id)) : [];
+
+  function changeWindow(nextWindow) {
+    setWindow(nextWindow);
+    setPage(0);
+  }
 
   function filter(nextCategory) {
     setCategory(nextCategory);
     const next = events.filter((event) => nextCategory === 'all' || event.category === nextCategory);
-    if (!next.some((event) => event.id === selectedId)) setSelectedId(next[0]?.id ?? null);
+    changeWindow(nextCategory === 'all' || !next.length ? domain : fitEvents(next, domain));
+  }
+
+  function selectMarker(id) {
+    const index = visible.findIndex((event) => event.id === id);
+    if (index >= 0) {
+      setSelectedId(id);
+      setPage(Math.floor(index / pageSize));
+    }
   }
 
   return (
@@ -86,25 +132,33 @@ export default function Atlas({ events, books, reading, editUrls, language }) {
             <button key={key} type="button" aria-pressed={category === key} onClick={() => filter(key)}>{label}</button>
           ))}
         </div>
-        <p className="result-count" aria-live="polite">{visible.length} {t.result}</p>
+        <Chronology events={visible} window={window} domain={domain} language={language} onChange={changeWindow} onReset={() => filter('all')} onSelect={selectMarker} />
+        <p className="result-count" aria-live="polite">{visible.length} {t.of} {events.length} {t.result}</p>
         <div className="explorer-grid">
+          <div>
           <div className="timeline">
-            {visible.map((event, index) => (
+            {pageEvents.map((event, index) => (
               <button
                 type="button"
-                className={`event-card ${selectedId === event.id ? 'selected' : ''}`}
+                className={`event-card ${selected?.id === event.id ? 'selected' : ''}`}
                 key={event.id}
                 onClick={() => setSelectedId(event.id)}
-                aria-pressed={selectedId === event.id}
+                aria-pressed={selected?.id === event.id}
                 aria-controls="event-detail"
               >
                 <span className="timeline-marker" aria-hidden="true" />
                 <span className="event-top"><span className="event-date">{event.date[language]}</span><span className={`status ${reading.events[event.id]}`}>{t[reading.events[event.id]]}</span></span>
                 <span className="event-title">{event.title[language]}</span>
-                <span className="event-bottom">{t.categories[event.category]}<span aria-hidden="true">{String(index + 1).padStart(2, '0')} ↗</span></span>
+                <span className="event-bottom">{event.location[language]}<span aria-hidden="true">{String(page * pageSize + index + 1).padStart(2, '0')} ↗</span></span>
               </button>
             ))}
             {!visible.length && <p>{t.empty}</p>}
+          </div>
+          {pageCount > 1 && <nav className="pagination" aria-label={t.pagination}>
+            <button type="button" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label={t.previous}>←</button>
+            <span aria-live="polite">{page + 1} / {pageCount}</span>
+            <button type="button" onClick={() => setPage(page + 1)} disabled={page === pageCount - 1} aria-label={t.next}>→</button>
+          </nav>}
           </div>
           {selected && (
             <aside id="event-detail" className="detail-panel" aria-labelledby="detail-title">
@@ -112,11 +166,18 @@ export default function Atlas({ events, books, reading, editUrls, language }) {
                 <div className={`detail-illustration ${selected.category}`} aria-hidden="true"><span>✦</span></div>
                 <p className="eyebrow">{t.detail}</p>
                 <p className="detail-date">{selected.date[language]}</p>
+                {(selected.time.range || selected.time.approximate || selected.time.kind === 'age') && <p className="date-kind">{selected.time.range ? t[selected.time.range] : t.approximate}</p>}
                 <h3 id="detail-title">{selected.title[language]}</h3>
+                <p className="detail-location">{selected.location[language]}</p>
                 <p className="detail-summary">{selected.summary[language]}</p>
                 <a className="source-link" href={selected.source.url} target="_blank" rel="noreferrer">{t.source} ↗<small>{selected.source.name}</small></a>
+                <section className="related-books" aria-label={t.recommendations}>
+                  <h4 className="eyebrow">{t.recommendations}</h4>
+                  {recommended.map((book) => <a href={`#book-${book.id}`} key={book.id}>{book.title} <span aria-hidden="true">↓</span></a>)}
+                  <p>{recommended.length ? t.recommendationNote : t.pendingBooks}</p>
+                </section>
                 <div className="detail-actions">
-                  <a className="button" href={editUrls.events}>{t.edit} ↗</a>
+                  <a className="button" href={selected.editUrl}>{t.edit} ↗</a>
                   <a className="quiet-link" href={editUrls.reading}>{t.progress} ↗</a>
                 </div>
               </div>
@@ -133,12 +194,13 @@ export default function Atlas({ events, books, reading, editUrls, language }) {
         <p className="library-note">{t.libraryNote}</p>
         <div className="books">
           {books.map((book, index) => (
-            <article className="book" key={book.id}>
+            <article className="book" id={`book-${book.id}`} key={book.id}>
               <div className={`book-cover cover-${index % 2}`} aria-hidden="true"><span>{book.author}</span><strong>{book.title}</strong><i>✦</i><small>{book.year}</small></div>
               <div className="book-info">
                 <span className={`status ${reading.books[book.id]}`}>{t[reading.books[book.id]]}</span>
                 <h3>{book.title}</h3><p className="book-author">{book.author} · {book.year}</p>
                 <p>{book.description[language]}</p>
+                <a className="quiet-link edition-link" href={`https://search.worldcat.org/search?q=${encodeURIComponent(`${book.title} ${book.author}`)}`} target="_blank" rel="noreferrer">{t.findEdition} ↗</a>
                 <a className="quiet-link" href={editUrls.reading}>{t.progress} ↗</a>
               </div>
             </article>

@@ -1,0 +1,80 @@
+# Agrupación práctica: no implica que todas estas sociedades vivieran una misma "Edad Media".
+events:
+  - id: hijra
+    category: medieval
+    time: {kind: calendar, start: 622}
+    date: {es: "622 d. C.", en: "622 CE"}
+    title: {es: "La Hégira y una nueva comunidad", en: "The Hijra and a new community"}
+    location: {es: "De La Meca a Medina, península arábiga", en: "Mecca to Medina, Arabian Peninsula"}
+    summary:
+      es: Mahoma y sus seguidores emigran de La Meca a Medina. El acontecimiento se convierte en la referencia inicial de la era islámica; el calendario de la Hégira es lunar y no equivale al gregoriano.
+      en: Muhammad and his followers migrate from Mecca to Medina. The event becomes the starting reference for the Islamic era; the Hijri calendar is lunar and is not equivalent to the Gregorian calendar.
+    books: [silk-roads]
+    source:
+      name: Encyclopaedia Britannica — Hijrah
+      url: https://www.britannica.com/event/Hijrah-Islam
+  - id: baghdad
+    category: medieval
+    time: {kind: calendar, start: 762}
+    date: {es: "762 d. C.", en: "762 CE"}
+    title: {es: "Bagdad, una capital entre rutas", en: "Baghdad, a capital between routes"}
+    location: {es: "Mesopotamia, actual Irak", en: "Mesopotamia, present-day Iraq"}
+    summary:
+      es: El califa abasí al-Mansur funda una nueva capital junto al Tigris. La ciudad llegará a ser un centro político, comercial e intelectual conectado con numerosas tradiciones.
+      en: The Abbasid caliph al-Mansur founds a new capital beside the Tigris. The city will become a political, commercial, and intellectual center connected with many traditions.
+    books: [silk-roads]
+    source:
+      name: Encyclopaedia Britannica — History of Baghdad
+      url: https://www.britannica.com/place/Baghdad/History
+  - id: angkor
+    category: medieval
+    time: {kind: calendar, start: 801, end: 1500, range: duration, approximate: true}
+    date: {es: "Siglos IX–XV", en: "Ninth–fifteenth centuries"}
+    title: {es: "Angkor, ciudades de agua y piedra", en: "Angkor, cities of water and stone"}
+    location: {es: "Actual Camboya", en: "Present-day Cambodia"}
+    summary:
+      es: Las capitales del imperio jemer forman un extenso paisaje urbano con templos y obras hidráulicas. El periodo reúne distintas etapas de Angkor; no es la fecha de construcción de un solo templo.
+      en: Khmer imperial capitals form an extensive urban landscape with temples and waterworks. The period brings together different stages of Angkor, not the construction dates of a single temple.
+    books: [silk-roads]
+    source:
+      name: UNESCO — Angkor
+      url: https://whc.unesco.org/en/list/668/
+  - id: aotearoa-settlement
+    category: medieval
+    time: {kind: calendar, start: 1250, end: 1300, range: uncertainty}
+    date: {es: "Hacia 1250–1300", en: "Around 1250–1300"}
+    title: {es: "Navegar hasta Aotearoa", en: "Voyaging to Aotearoa"}
+    location: {es: "Aotearoa / Nueva Zelanda, Oceanía", en: "Aotearoa / New Zealand, Oceania"}
+    summary:
+      es: Navegantes de la Polinesia oriental establecen asentamientos en Aotearoa. La datación combina evidencias arqueológicas; las tradiciones maoríes conservan otras dimensiones de estas historias de viaje.
+      en: Voyagers from East Polynesia establish settlements in Aotearoa. Archaeological evidence informs the dating; Māori traditions preserve other dimensions of these voyaging histories.
+    books: [penguin-new-zealand]
+    source:
+      name: Te Ara — When was New Zealand first settled?
+      url: https://teara.govt.nz/en/when-was-new-zealand-first-settled
+  - id: mansa-musa
+    category: medieval
+    time: {kind: calendar, start: 1324, end: 1325, range: duration}
+    date: {es: "1324–1325", en: "1324–1325"}
+    title: {es: "Mansa Musa conecta Mali con el mundo", en: "Mansa Musa connects Mali with the wider world"}
+    location: {es: "Mali, el Sáhara, Egipto y La Meca", en: "Mali, the Sahara, Egypt, and Mecca"}
+    summary:
+      es: La peregrinación del gobernante de Mali hace visible la riqueza y las conexiones de África occidental. Los relatos sobre su séquito y su oro requieren lectura crítica, no cifras aceptadas sin contraste.
+      en: The Mali ruler's pilgrimage draws attention to West Africa's wealth and connections. Accounts of his entourage and gold require critical reading rather than unexamined acceptance of their numbers.
+    books: [african-history, silk-roads]
+    source:
+      name: EBSCO — Mansa Mūsā's Pilgrimage to Mecca
+      url: https://www.ebsco.com/research-starters/history/mansa-musas-pilgrimage-mecca/
+  - id: tenochtitlan
+    category: medieval
+    time: {kind: calendar, start: 1325, approximate: true}
+    date: {es: "1325, fecha tradicional", en: "1325, traditional date"}
+    title: {es: "México-Tenochtitlan en el lago", en: "Mexico-Tenochtitlan on the lake"}
+    location: {es: "Cuenca de México, Mesoamérica", en: "Basin of Mexico, Mesoamerica"}
+    summary:
+      es: La tradición sitúa en 1325 la fundación de México-Tenochtitlan. Su crecimiento lacustre y su posterior poder imperial deben distinguirse del relato fundacional y de la historia más antigua de la cuenca.
+      en: Tradition dates the foundation of Mexico-Tenochtitlan to 1325. Its growth on the lake and later imperial power should be distinguished from its foundation story and the basin's earlier history.
+    books: [dawn-everything]
+    source:
+      name: Encyclopaedia Britannica — Tenochtitlán
+      url: https://www.britannica.com/place/Tenochtitlan

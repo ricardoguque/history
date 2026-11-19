@@ -12,7 +12,8 @@ export function getStaticPaths() {
 
 const { language } = Astro.props;
 const catalog = await loadCatalog();
-const editUrls = Object.fromEntries(['events', 'books', 'reading'].map((name) => [name, githubEditUrl(`data/${name}.yaml`)]));
+const editUrls = Object.fromEntries(['books', 'reading'].map((name) => [name, githubEditUrl(`data/${name}.yaml`)]));
+const events = catalog.events.map((event) => ({ ...event, editUrl: githubEditUrl(event.dataFile) }));
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const isSpanish = language === 'es';
 ---
@@ -55,8 +56,8 @@ const isSpanish = language === 'es';
       </header>
       <p id="theme-error" class="theme-error" role="status" hidden>{isSpanish ? 'No se pudo guardar o recuperar el tema en este navegador.' : 'Could not save or restore the theme in this browser.'}</p>
       <main id="main">
-        <div class="prototype-note"><span>{isSpanish ? 'PROTOTIPO' : 'PROTOTYPE'}</span>{isSpanish ? 'Datos de muestra · edición y acceso gestionados por GitHub' : 'Sample data · editing and access managed by GitHub'}</div>
-        <Atlas {...catalog} editUrls={editUrls} language={language} client:load />
+        <div class="prototype-note"><span>{isSpanish ? 'CATÁLOGO INICIAL' : 'INITIAL CATALOG'}</span>{isSpanish ? `${events.length} hitos · ${catalog.books.length} libros · selección no exhaustiva` : `${events.length} events · ${catalog.books.length} books · non-exhaustive selection`}</div>
+        <Atlas events={events} books={catalog.books} reading={catalog.reading} editUrls={editUrls} language={language} client:load />
       </main>
       <footer>
         <a class="wordmark" href={base}>history.</a>

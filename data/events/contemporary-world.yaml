@@ -1,0 +1,118 @@
+events:
+  - id: united-nations
+    category: contemporary
+    time: {kind: calendar, start: 1945}
+    date: {es: "24 de octubre de 1945", en: "October 24, 1945"}
+    title: {es: "Entra en vigor la Carta de las Naciones Unidas", en: "The United Nations Charter enters into force"}
+    location: {es: "Ámbito internacional", en: "International"}
+    summary:
+      es: La entrada en vigor de la Carta establece oficialmente las Naciones Unidas. La fecha se distingue de la firma de junio de 1945 y abre una historia de cooperación, disputas y límites de la gobernanza internacional.
+      en: The Charter's entry into force formally establishes the United Nations. This date differs from its signing in June 1945 and opens a history of cooperation, disputes, and limits in international governance.
+    books: [origins-modern-world]
+    source:
+      name: United Nations — History of the United Nations
+      url: https://www.un.org/en/about-us/history-of-the-un
+  - id: india-pakistan
+    category: contemporary
+    time: {kind: calendar, start: 1947}
+    date: {es: "Agosto de 1947", en: "August 1947"}
+    title: {es: "Independencia y partición del subcontinente", en: "Independence and partition in the subcontinent"}
+    location: {es: "India y Pakistán; incluido el actual Bangladés", en: "India and Pakistan, including present-day Bangladesh"}
+    summary:
+      es: El fin del dominio británico crea los estados independientes de India y Pakistán. La partición provoca migraciones masivas y violencia; las experiencias de sus habitantes no se reducen a un cambio de fronteras.
+      en: The end of British rule creates independent India and Pakistan. Partition brings mass migration and violence; people's experiences extend far beyond a change of borders.
+    books: [india-history]
+    source:
+      name: National Army Museum — Independence and Partition, 1947
+      url: https://www.nam.ac.uk/explore/independence-and-partition-1947
+  - id: africa-1960
+    category: contemporary
+    time: {kind: calendar, start: 1960}
+    date: {es: "1960", en: "1960"}
+    title: {es: "El año de África y la descolonización", en: "The Year of Africa and decolonization"}
+    location: {es: "África", en: "Africa"}
+    summary:
+      es: Numerosos territorios africanos alcanzan la independencia en 1960, año emblemático de un proceso más largo. Las trayectorias de cada sociedad y los legados coloniales requieren historias propias.
+      en: Many African territories gain independence in 1960, an emblematic year within a longer process. Each society's trajectory and colonial legacies require histories of their own.
+    books: [african-history]
+    source:
+      name: United Nations — History of Decolonization
+      url: https://www.un.org/dppa/decolonization/en/history
+  - id: apollo-11
+    category: contemporary
+    time: {kind: calendar, start: 1969}
+    date: {es: "20 de julio de 1969", en: "July 20, 1969"}
+    title: {es: "Otro mundo bajo nuestros pies", en: "Another world beneath our feet"}
+    location: {es: "La Luna", en: "The Moon"}
+    summary:
+      es: El módulo lunar del Apollo 11 aterriza en la Luna. La fecha corresponde al alunizaje, no al primer paso de Armstrong, que en UTC ocurrió el día 21.
+      en: Apollo 11's lunar module lands on the Moon. The date refers to the landing, not Armstrong's first step, which occurred on July 21 in UTC.
+    books: [cosmos]
+    source:
+      name: NASA — Apollo 11
+      url: https://www.nasa.gov/mission/apollo-11/
+  - id: world-wide-web
+    category: contemporary
+    time: {kind: calendar, start: 1989}
+    date: {es: "Marzo de 1989", en: "March 1989"}
+    title: {es: "Un mundo de conexiones", en: "A world of connections"}
+    location: {es: "CERN, frontera franco-suiza", en: "CERN, French–Swiss border"}
+    summary:
+      es: Tim Berners-Lee presenta una propuesta de gestión de información que dará origen a la World Wide Web. La Web y sus enlaces no son lo mismo que Internet, cuya historia es anterior.
+      en: Tim Berners-Lee submits an information management proposal that will lead to the World Wide Web. The Web and its links are not the same as the older Internet.
+    books: [information]
+    source:
+      name: CERN — World Wide Web, History to date
+      url: https://info.cern.ch/hypertext/WWW/History.html
+  - id: south-africa-election
+    category: contemporary
+    time: {kind: calendar, start: 1994}
+    date: {es: "Abril de 1994", en: "April 1994"}
+    title: {es: "Sudáfrica vota sin exclusión racial", en: "South Africa votes without racial exclusion"}
+    location: {es: "Sudáfrica", en: "South Africa"}
+    summary:
+      es: Las primeras elecciones nacionales democráticas no raciales abren una nueva etapa después del apartheid. El 27 de abril se conmemora como Día de la Libertad; la transformación del país continúa después de la votación.
+      en: The first democratic non-racial national elections open a new era after apartheid. April 27 is commemorated as Freedom Day; the country's transformation continues after the vote.
+    books: [african-history]
+    source:
+      name: South African Government — Freedom Day
+      url: https://www.gov.za/about-sa/public-holidays
+  - id: covid-pandemic
+    category: contemporary
+    time: {kind: calendar, start: 2020}
+    date: {es: "11 de marzo de 2020", en: "March 11, 2020"}
+    title: {es: "La OMS caracteriza la COVID-19 como pandemia", en: "WHO characterizes COVID-19 as a pandemic"}
+    location: {es: "Ámbito mundial", en: "Worldwide"}
+    summary:
+      es: La OMS caracteriza la expansión de la COVID-19 como una pandemia. Esta fecha corresponde a una evaluación institucional, no al primer contagio ni al comienzo universal de las medidas sanitarias.
+      en: WHO characterizes the spread of COVID-19 as a pandemic. This date marks an institutional assessment, not the first infection or a universal start date for public health measures.
+    books: []
+    source:
+      name: World Health Organization — COVID-19 pandemic
+      url: https://www.who.int/europe/emergencies/situations/covid-19
+  - id: chandrayaan-3
+    category: contemporary
+    time: {kind: calendar, start: 2023}
+    date: {es: "23 de agosto de 2023", en: "August 23, 2023"}
+    title: {es: "Chandrayaan-3 llega al sur de la Luna", en: "Chandrayaan-3 reaches the Moon's southern region"}
+    location: {es: "Región polar sur de la Luna; misión de India", en: "Moon's south polar region; Indian mission"}
+    summary:
+      es: La misión india logra un alunizaje suave cerca de la región polar sur. No aterriza en el polo geográfico exacto; el hito amplía las capacidades de exploración lunar de India.
+      en: The Indian mission achieves a soft landing near the south polar region. It does not land at the exact geographic pole; the milestone expands India's lunar exploration capabilities.
+    books: [cosmos]
+    source:
+      name: ISRO — Chandrayaan-3
+      url: https://www.isro.gov.in/Chandrayaan3.html
+  - id: pandemic-agreement
+    category: contemporary
+    time: {kind: calendar, start: 2025}
+    date: {es: "20 de mayo de 2025", en: "May 20, 2025"}
+    title: {es: "La Asamblea Mundial de la Salud adopta un acuerdo sobre pandemias", en: "The World Health Assembly adopts a pandemic agreement"}
+    location: {es: "Ginebra; ámbito internacional", en: "Geneva; international"}
+    summary:
+      es: La Asamblea adopta por consenso el Acuerdo de la OMS sobre Pandemias tras años de negociación. La adopción del texto no debe confundirse con su entrada en vigor o la ratificación por cada país.
+      en: The Assembly adopts the WHO Pandemic Agreement by consensus after years of negotiations. Adoption of the text should not be confused with entry into force or ratification by individual countries.
+    books: []
+    source:
+      name: WHO — World Health Assembly adopts historic Pandemic Agreement
+      url: https://www.who.int/news/item/20-05-2025-world-health-assembly-adopts-historic-pandemic-agreement-to-make-the-world-more-equitable-and-safer-from-future-pandemics

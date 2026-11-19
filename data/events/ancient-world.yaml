@@ -1,0 +1,107 @@
+# Años astronómicos internos: 0 = 1 a. C.; -1 = 2 a. C.
+# range: uncertainty indica una fecha posible; duration, un periodo de actividad.
+events:
+  - id: writing
+    category: ancient
+    time: {kind: calendar, start: -3399, end: -3199, range: uncertainty}
+    date: {es: "Hacia 3400–3200 a. C.", en: "Around 3400–3200 BCE"}
+    title: {es: "La memoria se convierte en escritura", en: "Memory becomes writing"}
+    location: {es: "Mesopotamia, actual Irak", en: "Mesopotamia, present-day Iraq"}
+    summary:
+      es: En Mesopotamia aparecen algunas de las primeras formas de escritura conocidas, ligadas a necesidades de registro. La escritura también se desarrolla en otras regiones; no tiene un único origen universal.
+      en: Some of the earliest known forms of writing emerge in Mesopotamia, linked to record keeping. Writing also develops in other regions; it has no single universal origin.
+    books: [dawn-everything, information]
+    source:
+      name: The Metropolitan Museum of Art — The Origins of Writing
+      url: https://www.metmuseum.org/essays/the-origins-of-writing
+  - id: caral
+    category: ancient
+    time: {kind: calendar, start: -2999, end: -1799, range: duration}
+    date: {es: "Aproximadamente 3000–1800 a. C.", en: "Approximately 3000–1800 BCE"}
+    title: {es: "Caral y las ciudades de los Andes", en: "Caral and the cities of the Andes"}
+    location: {es: "Valle de Supe, actual Perú", en: "Supe Valley, present-day Peru"}
+    summary:
+      es: Caral reúne arquitectura monumental, plazas y espacios ceremoniales en la costa andina. Su historia permite explorar una tradición urbana americana desarrollada milenios antes de la expansión europea.
+      en: Caral brings together monumental architecture, plazas, and ceremonial spaces on the Andean coast. Its history reveals an American urban tradition developed millennia before European expansion.
+    books: [dawn-everything]
+    source:
+      name: UNESCO — Sacred City of Caral-Supe
+      url: https://whc.unesco.org/en/list/1269/
+  - id: mohenjo-daro
+    category: ancient
+    time: {kind: calendar, start: -2999, end: -2000, range: uncertainty}
+    date: {es: "III milenio a. C.", en: "Third millennium BCE"}
+    title: {es: "Una ciudad planificada en el valle del Indo", en: "A planned city in the Indus Valley"}
+    location: {es: "Mohenjo Daro, actual Pakistán", en: "Mohenjo-daro, present-day Pakistan"}
+    summary:
+      es: Mohenjo Daro muestra calles organizadas, construcciones de ladrillo e infraestructura urbana. El intervalo sitúa su surgimiento en el tercer milenio, no una duración exacta de toda la civilización del Indo.
+      en: Mohenjo-daro displays organized streets, brick buildings, and urban infrastructure. The interval places its emergence in the third millennium, not the exact duration of the entire Indus civilization.
+    books: [india-history]
+    source:
+      name: UNESCO — Archaeological Ruins at Moenjodaro
+      url: https://whc.unesco.org/en/list/138/
+  - id: giza
+    category: ancient
+    time: {kind: calendar, start: -2599, approximate: true}
+    date: {es: "Hacia 2600 a. C.", en: "Around 2600 BCE"}
+    title: {es: "El horizonte de las pirámides", en: "The pyramid horizon"}
+    location: {es: "Guiza, Egipto", en: "Giza, Egypt"}
+    summary:
+      es: Durante la IV dinastía se levantan las grandes pirámides de Guiza. La fecha es una referencia redondeada para un conjunto construido a lo largo de varios reinados, no la fecha exacta de una inauguración.
+      en: The great pyramids of Giza are built during the Fourth Dynasty. The date is a rounded reference for a complex built across several reigns, not an exact inauguration date.
+    books: [dawn-everything]
+    source:
+      name: Australian Museum — Ancient Egyptian Timeline
+      url: https://australian.museum/learn/cultures/international-collection/ancient-egyptian/ancient-egyptian-timeline/
+  - id: yin-xu
+    category: ancient
+    time: {kind: calendar, start: -1299, end: -1045, range: duration}
+    date: {es: "1300–1046 a. C.", en: "1300–1046 BCE"}
+    title: {es: "Voces escritas en los huesos de Yin Xu", en: "Voices written on the bones of Yin Xu"}
+    location: {es: "Anyang, China", en: "Anyang, China"}
+    summary:
+      es: La capital Shang tardía conserva palacios, tumbas e inscripciones en huesos oraculares. Estos testimonios permiten estudiar la escritura y las prácticas políticas y religiosas de la China antigua.
+      en: The late Shang capital preserves palaces, tombs, and oracle-bone inscriptions. These records illuminate writing and the political and religious practices of ancient China.
+    books: [china-history, information]
+    source:
+      name: UNESCO — Yin Xu
+      url: https://whc.unesco.org/en/list/1114/
+  - id: tikal
+    category: ancient
+    time: {kind: calendar, start: -599, end: 1000, range: duration, approximate: true}
+    date: {es: "Siglo VI a. C.–siglo X d. C.", en: "Sixth century BCE–tenth century CE"}
+    title: {es: "Tikal entre la selva y las ciudades mayas", en: "Tikal among the forests and Maya cities"}
+    location: {es: "Petén, actual Guatemala", en: "Petén, present-day Guatemala"}
+    summary:
+      es: Tikal es uno de los grandes centros urbanos mayas, con templos, palacios y plazas. El intervalo corresponde a su ocupación histórica aproximada y no a la duración de toda la cultura maya.
+      en: Tikal is a major Maya urban center with temples, palaces, and plazas. The interval describes its approximate historical occupation, not the duration of all Maya culture.
+    books: [dawn-everything]
+    source:
+      name: UNESCO — Tikal National Park
+      url: https://whc.unesco.org/en/list/64/
+  - id: cyrus-babylon
+    category: ancient
+    time: {kind: calendar, start: -538}
+    date: {es: "539 a. C.", en: "539 BCE"}
+    title: {es: "Babilonia pasa al imperio de Ciro", en: "Babylon becomes part of Cyrus's empire"}
+    location: {es: "Babilonia, actual Irak", en: "Babylon, present-day Iraq"}
+    summary:
+      es: La conquista persa transforma el mapa político de Mesopotamia. El cilindro de Ciro es una fuente para estudiar la legitimación del nuevo poder, y debe leerse en su contexto histórico, no como una declaración moderna de derechos.
+      en: The Persian conquest reshapes Mesopotamian politics. The Cyrus Cylinder is evidence of how the new power justified its rule and should be read in its historical context, not as a modern declaration of rights.
+    books: [silk-roads]
+    source:
+      name: British Museum — The Cyrus Cylinder
+      url: https://www.britishmuseum.org/collection/object/W_1880-0617-1941
+  - id: qin-unification
+    category: ancient
+    time: {kind: calendar, start: -220}
+    date: {es: "221 a. C.", en: "221 BCE"}
+    title: {es: "Qin unifica los reinos combatientes", en: "Qin unifies the Warring States"}
+    location: {es: "China", en: "China"}
+    summary:
+      es: El rey de Qin adopta el título de primer emperador tras conquistar a sus rivales. La unificación política impulsa nuevas formas de administración y estandarización, aunque la dinastía tiene una vida breve.
+      en: The king of Qin takes the title of First Emperor after conquering rival states. Political unification advances administration and standardization, although the dynasty is short-lived.
+    books: [china-history]
+    source:
+      name: The Metropolitan Museum of Art — The Qin Dynasty
+      url: https://www.metmuseum.org/essays/the-qin-dynasty-221-206-b-c

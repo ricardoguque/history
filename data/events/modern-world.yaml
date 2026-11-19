@@ -1,0 +1,66 @@
+events:
+  - id: haitian-revolution
+    category: modern
+    time: {kind: calendar, start: 1791, end: 1804, range: duration}
+    date: {es: "1791–1804", en: "1791–1804"}
+    title: {es: "La Revolución haitiana transforma el Atlántico", en: "The Haitian Revolution transforms the Atlantic"}
+    location: {es: "Saint-Domingue / Haití", en: "Saint-Domingue / Haiti"}
+    summary:
+      es: La lucha contra la esclavitud y el dominio colonial culmina en la independencia de Haití. Sus protagonistas y sus consecuencias obligan a estudiar las revoluciones atlánticas más allá de Europa y Norteamérica.
+      en: The struggle against slavery and colonial rule culminates in Haitian independence. Its actors and consequences place Atlantic revolutions in a frame extending beyond Europe and North America.
+    books: [black-jacobins, origins-modern-world]
+    source:
+      name: Encyclopaedia Britannica — Haitian Revolution
+      url: https://www.britannica.com/topic/Haitian-Revolution
+  - id: origin-species
+    category: modern
+    time: {kind: calendar, start: 1859}
+    date: {es: "1859", en: "1859"}
+    title: {es: "El origen de las especies entra en debate", en: "On the Origin of Species enters the debate"}
+    location: {es: "Reino Unido; circulación internacional", en: "United Kingdom; international circulation"}
+    summary:
+      es: Charles Darwin publica su explicación de la evolución por selección natural. La teoría cambia con investigaciones posteriores; el libro no representa por sí solo toda la biología evolutiva actual.
+      en: Charles Darwin publishes his account of evolution by natural selection. The theory develops through later research; the book alone does not represent all of modern evolutionary biology.
+    books: [rise-fall-dinosaurs]
+    source:
+      name: Natural History Museum — Charles Darwin
+      url: https://www.nhm.ac.uk/discover/charles-darwin-most-famous-biologist.html
+  - id: meiji
+    category: modern
+    time: {kind: calendar, start: 1868}
+    date: {es: "1868", en: "1868"}
+    title: {es: "La Restauración Meiji reordena Japón", en: "The Meiji Restoration reshapes Japan"}
+    location: {es: "Japón", en: "Japan"}
+    summary:
+      es: La restauración del gobierno imperial abre una etapa de reformas políticas, sociales y económicas. El proceso combina conflictos internos y relaciones internacionales, no una simple adopción de modelos extranjeros.
+      en: The restoration of imperial government opens an era of political, social, and economic reform. It combines domestic conflicts and international relations, not a simple adoption of foreign models.
+    books: [origins-modern-world]
+    source:
+      name: National Diet Library — Modern Japan, Steps toward a Constitutional State
+      url: https://www.ndl.go.jp/modern/e/cha1/index.html
+  - id: melbourne-exhibition
+    category: modern
+    time: {kind: calendar, start: 1880}
+    date: {es: "1880", en: "1880"}
+    title: {es: "Melbourne se exhibe ante el mundo", en: "Melbourne presents itself to the world"}
+    location: {es: "Melbourne, Australia", en: "Melbourne, Australia"}
+    summary:
+      es: La exposición internacional de Melbourne forma parte de una red de certámenes industriales. Permite estudiar cómo el siglo XIX representó el progreso, el comercio y los imperios, y qué voces quedaron fuera de esas representaciones.
+      en: Melbourne's international exhibition belongs to a network of industrial exhibitions. It offers a way to study nineteenth-century representations of progress, commerce, and empire, and the voices excluded from them.
+    books: [origins-modern-world]
+    source:
+      name: UNESCO — Royal Exhibition Building and Carlton Gardens
+      url: https://whc.unesco.org/en/list/1131/
+  - id: first-world-war
+    category: modern
+    time: {kind: calendar, start: 1914, end: 1918, range: duration}
+    date: {es: "1914–1918", en: "1914–1918"}
+    title: {es: "Una guerra de alcance mundial", en: "A war with worldwide reach"}
+    location: {es: "Europa, África, Asia y otros escenarios", en: "Europe, Africa, Asia, and other theaters"}
+    summary:
+      es: La Primera Guerra Mundial moviliza sociedades e imperios en varios continentes. El intervalo corresponde a la guerra convencionalmente fechada; sus conflictos asociados y consecuencias no terminan todos en 1918.
+      en: The First World War mobilizes societies and empires across continents. The interval follows the conventional dating of the war; associated conflicts and consequences do not all end in 1918.
+    books: [silk-roads]
+    source:
+      name: Imperial War Museums — How the World Went to War in 1914
+      url: https://www.iwm.org.uk/history/how-the-world-went-to-war-in-1914

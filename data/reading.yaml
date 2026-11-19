@@ -1,9 +1,55 @@
 # Cambia unread por read y guarda el archivo en GitHub para publicar el progreso.
 events:
   universe: unread
+  solar-system: unread
+  earth-formation: unread
+  early-life: unread
+  chicxulub: unread
+  homo-sapiens: unread
+  white-sands: unread
+  agriculture: unread
   writing: unread
+  caral: unread
+  mohenjo-daro: unread
+  giza: unread
+  yin-xu: unread
+  tikal: unread
+  cyrus-babylon: unread
+  qin-unification: unread
+  hijra: unread
+  baghdad: unread
+  angkor: unread
+  aotearoa-settlement: unread
+  mansa-musa: unread
+  tenochtitlan: unread
+  gutenberg-bible: unread
+  caribbean-1492: unread
+  tokugawa: unread
+  principia: unread
+  haitian-revolution: unread
+  origin-species: unread
+  meiji: unread
+  melbourne-exhibition: unread
+  first-world-war: unread
+  united-nations: unread
+  india-pakistan: unread
+  africa-1960: unread
   apollo-11: unread
   world-wide-web: unread
+  south-africa-election: unread
+  covid-pandemic: unread
+  chandrayaan-3: unread
+  pandemic-agreement: unread
 books:
   cosmos: unread
   brief-history-time: unread
+  rise-fall-dinosaurs: unread
+  dawn-everything: unread
+  silk-roads: unread
+  african-history: unread
+  india-history: unread
+  china-history: unread
+  penguin-new-zealand: unread
+  black-jacobins: unread
+  origins-modern-world: unread
+  information: unread

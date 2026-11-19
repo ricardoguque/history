@@ -1,0 +1,40 @@
+events:
+  - id: earth-formation
+    category: earth
+    time: {kind: age, years: 4500000000, reference_year: 2000}
+    date: {es: "Hace unos 4500 millones de años", en: "About 4.5 billion years ago"}
+    title: {es: "Un planeta llamado Tierra", en: "A planet called Earth"}
+    location: {es: "Sistema solar", en: "Solar system"}
+    summary:
+      es: La acumulación de material del disco solar forma la Tierra. La cifra redondeada permite situar el proceso en la escala cósmica sin atribuirle una precisión anual inexistente.
+      en: Material accumulating in the solar disk forms Earth. The rounded age places the process on a cosmic scale without implying nonexistent year-level precision.
+    books: [cosmos]
+    source:
+      name: NASA — Earth Facts
+      url: https://science.nasa.gov/earth/facts/
+  - id: early-life
+    category: earth
+    time: {kind: age, years: 3800000000, reference_year: 2000}
+    date: {es: "Hace unos 3800 millones de años", en: "About 3.8 billion years ago"}
+    title: {es: "La Tierra se vuelve un mundo vivo", en: "Earth becomes a living world"}
+    location: {es: "Tierra primitiva", en: "Early Earth"}
+    summary:
+      es: NASA sitúa aproximadamente en esta época el comienzo de la vida en los océanos. El origen de la vida y la interpretación de sus evidencias más antiguas siguen siendo áreas de investigación.
+      en: NASA places the beginning of life in the oceans around this time. The origin of life and the interpretation of its earliest evidence remain active areas of research.
+    books: [cosmos]
+    source:
+      name: NASA — Earth Facts
+      url: https://science.nasa.gov/earth/facts/
+  - id: chicxulub
+    category: earth
+    time: {kind: age, years: 66000000, reference_year: 2000}
+    date: {es: "Hace unos 66 millones de años", en: "About 66 million years ago"}
+    title: {es: "El impacto que transforma la vida", en: "The impact that reshapes life"}
+    location: {es: "Chicxulub, actual México; efectos globales", en: "Chicxulub, present-day Mexico; global effects"}
+    summary:
+      es: El impacto de un asteroide desencadena una crisis ambiental asociada con una extinción masiva. Desaparecen los dinosaurios no avianos; las aves, que también son dinosaurios, sobreviven.
+      en: An asteroid impact triggers an environmental crisis associated with a mass extinction. Non-avian dinosaurs disappear; birds, which are also dinosaurs, survive.
+    books: [rise-fall-dinosaurs]
+    source:
+      name: Natural History Museum — How an asteroid ended the age of the dinosaurs
+      url: https://www.nhm.ac.uk/discover/how-an-asteroid-caused-extinction-of-dinosaurs.html

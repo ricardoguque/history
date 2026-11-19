@@ -184,6 +184,13 @@ grandes sin modificar los identificadores ni duplicar acontecimientos.
 Los límites concretos de cada archivo se definirán al preparar el catálogo.
 Los acontecimientos que crucen periodos tendrán una sola ficha.
 
+En el catálogo inicial ya se usan `catalog.yaml`, los ocho archivos de hitos,
+`books.yaml` y `reading.yaml`. Los archivos de ediciones, afirmaciones, fuentes
+independientes y vocabularios siguen siendo parte del diseño posterior.
+Cada hito contiene de momento una fuente enlazada y una lista `books` de
+recomendaciones de contexto; esa relación no afirma que se haya verificado la
+fecha en esos libros.
+
 ## 6. Fechas y escalas temporales
 
 No se utilizará `Date` de JavaScript como representación universal de la cronología:
@@ -213,6 +220,32 @@ Se derivará una coordenada numérica común únicamente para ordenación y dibu
 La visualización no deberá inventar precisión que los datos originales no tienen.
 El formato exacto y los límites de precisión se concretarán antes de implementar.
 
+### Formato temporal de la prueba actual
+
+El esquema inicial distingue dos representaciones, además del texto bilingüe
+`date` que se muestra al lector:
+
+```yaml
+# Fecha histórica: 3400–3200 a. C., con incertidumbre sobre su datación.
+time: {kind: calendar, start: -3399, end: -3199, range: uncertainty}
+
+# Edad científica aproximada; 2000 es una referencia convencional de dibujo.
+time: {kind: age, years: 13800000000, reference_year: 2000}
+```
+
+`start` y `end` usan años astronómicos enteros. `end` es opcional; si se incluye
+un intervalo no nulo, `range` debe indicar `duration` o `uncertainty`. Las fechas
+convencionales o redondeadas pueden señalar `approximate: true`.
+
+Las edades científicas son aproximadas y requieren `reference_year` explícito.
+Un intervalo de edades admite `youngest_years` y su tipo de rango. La referencia
+2000 elegida en esta muestra no equivale a BP ni a una datación exacta del origen
+del universo, de la vida o de una especie.
+
+La resolución numérica actual es anual. Un texto que muestre un día concreto
+conserva esa información para lectura, pero todavía no habilita zoom diario ni
+ordenación entre varios acontecimientos del mismo año.
+
 ### Comportamiento del zoom
 
 Se propone una navegación multiescala con niveles y agrupación de hitos. Una única
@@ -230,9 +263,21 @@ representaciones distintas y etiquetas accesibles.
 ### Prueba inicial: solo GitHub
 
 El prototipo utiliza Astro y React, carga los YAML durante el build y publica
-HTML estático en GitHub Pages. Incluye una muestra bilingüe de hitos y libros,
-selección de capítulos, fichas y tres variantes oscuras: Tinta, Musgo y Ciruela.
-Todavía no implementa zoom temporal, búsqueda ni edición dentro de la página.
+HTML estático en GitHub Pages. El catálogo inicial reúne 40 hitos y 12 libros,
+con contenido bilingüe y cobertura selectiva desde el universo temprano hasta
+2025. No representa una cobertura completa de épocas, regiones o del presente.
+
+La exploración incluye un eje temporal lineal, zoom mediante botones, desplazamiento,
+agrupación de marcadores y accesos por periodo. Los intervalos se incluyen cuando
+se solapan con la ventana visible; las bandas distinguen duración de incertidumbre.
+Las tarjetas tienen separación editorial, no proporcional al tiempo, y se muestran
+en páginas de ocho para mantener manejable la navegación.
+
+Cada ficha enlaza a su fuente, a lecturas recomendadas y al YAML concreto que la
+contiene. Todos los hitos y libros empiezan sin leer; no se infieren lecturas del
+usuario. Se mantienen los temas oscuros Tinta, Musgo y Ciruela.
+Todavía no hay búsqueda, edición dentro de la página, zoom diario ni gestos de
+arrastre o pellizco.
 
 Los botones de edición abren el archivo correspondiente mediante
 `https://github.com/ricardoguque/history/edit/main/data/...`. La autenticación,
@@ -399,9 +444,17 @@ obligatorios, en vez de presentar una traducción faltante como si estuviera com
 
 ### Prueba técnica actual
 
-Validar primero lectura de YAML, diseño oscuro, islas React, edición delegada a
-GitHub y generación estática. Los datos son ejemplos, no un catálogo completo ni
-el esquema temporal definitivo.
+La prueba permite evaluar el catálogo inicial, los archivos por periodo, el eje
+temporal con zoom y la relación entre hitos y lecturas. El esquema temporal aún
+es una base de trabajo, no el modelo completo de afirmaciones y ediciones.
+
+Para añadir un hito, se incorpora al archivo del periodo con identificador estable,
+textos en ambos idiomas, `time`, `location`, `books` y `source`. También se añade
+su estado en `reading.yaml`. Para un periodo nuevo se agrega su archivo a
+`catalog.yaml`; una categoría de navegación nueva requiere además actualizar
+los identificadores y sus traducciones en la aplicación.
+Al corregir una fecha se deben mantener consistentes `date.es`, `date.en` y
+`time`: el texto libre no se interpreta automáticamente para generar coordenadas.
 
 Para ejecutarla localmente con Node.js 24:
 
@@ -488,5 +541,6 @@ los contenidos completos de libros y la recopilación automática indiscriminada
 | Exportación y formato YAML | Acordar cómo se preservan comentarios, orden y formato al editar desde la web. |
 | Licencias y fuentes de arranque | Elegir licencias y verificar condiciones antes de importar contenido. |
 
-El siguiente paso de diseño será acordar una muestra de hitos y libros, y usarla
-para concretar el esquema YAML y el comportamiento de la línea de tiempo.
+El catálogo inicial servirá para evaluar la navegación y priorizar qué regiones
+y periodos ampliar, además de concretar el modelo de ediciones y afirmaciones
+cronológicas al empezar a contrastar lecturas.

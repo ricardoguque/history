@@ -1,0 +1,12 @@
+schema_version: 1
+# Selección inicial, no cobertura exhaustiva. Las fuentes y fechas siguen siendo revisables.
+# Los periodos son agrupaciones de navegación, no etapas universales de todas las culturas.
+event_files:
+  - data/events/cosmos.yaml
+  - data/events/earth-and-life.yaml
+  - data/events/human-origins.yaml
+  - data/events/ancient-world.yaml
+  - data/events/medieval-world.yaml
+  - data/events/early-modern-world.yaml
+  - data/events/modern-world.yaml
+  - data/events/contemporary-world.yaml

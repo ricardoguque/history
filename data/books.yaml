@@ -1,4 +1,5 @@
-# Recomendaciones de ejemplo, no fuentes específicas de las fechas anteriores.
+# Recomendaciones de contexto; no equivalen a haber contrastado una fecha en esa obra.
+# year corresponde a la primera publicación de la obra indicada, no a una edición leída.
 books:
   - id: cosmos
     title: Cosmos
@@ -14,3 +15,73 @@ books:
     description:
       es: Una exploración divulgativa del espacio, el tiempo y las grandes preguntas de la cosmología.
       en: A popular exploration of space, time, and the big questions of cosmology.
+  - id: rise-fall-dinosaurs
+    title: The Rise and Fall of the Dinosaurs
+    author: Steve Brusatte
+    year: 2018
+    description:
+      es: Historia evolutiva de los dinosaurios y de los métodos con que se reconstruye su mundo.
+      en: An evolutionary history of dinosaurs and the methods used to reconstruct their world.
+  - id: dawn-everything
+    title: The Dawn of Everything
+    author: David Graeber & David Wengrow
+    year: 2021
+    description:
+      es: Una interpretación de la diversidad social de la prehistoria y la antigüedad. Sus tesis son debatidas y conviene contrastarlas con otras investigaciones.
+      en: An interpretation of social diversity in prehistory and antiquity. Its arguments are debated and should be compared with other research.
+  - id: silk-roads
+    title: The Silk Roads
+    author: Peter Frankopan
+    year: 2015
+    description:
+      es: Una historia de conexiones euroasiáticas que desplaza el foco habitual de Europa occidental. No sustituye a historias regionales especializadas.
+      en: A history of Eurasian connections that shifts the usual focus away from Western Europe. It does not replace specialized regional histories.
+  - id: african-history
+    title: "African History: A Very Short Introduction"
+    author: John Parker & Richard Rathbone
+    year: 2007
+    description:
+      es: Introducción a las fuentes, debates y diversidad de las historias africanas, más allá de una narración centrada en el colonialismo.
+      en: An introduction to the sources, debates, and diversity of African histories, beyond a narrative centered on colonialism.
+  - id: india-history
+    title: "India: A History"
+    author: John Keay
+    year: 2000
+    description:
+      es: Panorama histórico del subcontinente indio. El ámbito del libro no coincide con las fronteras actuales de la República de India.
+      en: A historical overview of the Indian subcontinent. Its scope is not identical to the present-day borders of the Republic of India.
+  - id: china-history
+    title: "China: A History"
+    author: John Keay
+    year: 2008
+    description:
+      es: Recorrido de larga duración por la historia de China, útil como punto de partida para profundizar en periodos y dinastías.
+      en: A long-term account of Chinese history, useful as a starting point for studying particular periods and dynasties.
+  - id: penguin-new-zealand
+    title: The Penguin History of New Zealand
+    author: Michael King
+    year: 2003
+    description:
+      es: Historia de Aotearoa / Nueva Zelanda, con atención a los encuentros entre tradiciones maoríes y europeas.
+      en: A history of Aotearoa / New Zealand, with attention to encounters between Māori and European traditions.
+  - id: black-jacobins
+    title: The Black Jacobins
+    author: C. L. R. James
+    year: 1938
+    description:
+      es: Una interpretación clásica de la Revolución haitiana y Toussaint Louverture. Leerla junto con estudios posteriores permite reconocer cambios historiográficos.
+      en: A classic interpretation of the Haitian Revolution and Toussaint Louverture. Reading it alongside later studies reveals changes in historical interpretation.
+  - id: origins-modern-world
+    title: "The Origins of the Modern World"
+    author: Robert B. Marks
+    year: 2002
+    description:
+      es: Historia global y ambiental del mundo moderno, centrada en relaciones entre regiones, economías y recursos.
+      en: A global and environmental history of the modern world, focusing on relationships between regions, economies, and resources.
+  - id: information
+    title: "The Information"
+    author: James Gleick
+    year: 2011
+    description:
+      es: Historia de las ideas y tecnologías de la información, desde formas de comunicación antiguas hasta las redes digitales.
+      en: A history of information ideas and technologies, from older forms of communication to digital networks.

@@ -1,0 +1,29 @@
+# reference_year es una referencia convencional para dibujar edades aproximadas.
+# No convierte estas estimaciones en fechas exactas de calendario.
+events:
+  - id: universe
+    category: cosmos
+    time: {kind: age, years: 13800000000, reference_year: 2000}
+    date: {es: "Hace unos 13 800 millones de años", en: "About 13.8 billion years ago"}
+    title: {es: "El comienzo de todo", en: "The beginning of everything"}
+    location: {es: "Universo observable", en: "Observable universe"}
+    summary:
+      es: El universo observable se expande desde un estado extremadamente caliente y denso. Su edad es una estimación cosmológica; el Big Bang no describe una explosión dentro de un espacio vacío preexistente.
+      en: The observable universe expands from an extremely hot, dense state. Its age is a cosmological estimate; the Big Bang does not describe an explosion into pre-existing empty space.
+    books: [cosmos, brief-history-time]
+    source:
+      name: NASA — Overview of the Universe
+      url: https://science.nasa.gov/universe/overview/
+  - id: solar-system
+    category: cosmos
+    time: {kind: age, years: 4600000000, reference_year: 2000}
+    date: {es: "Hace unos 4600 millones de años", en: "About 4.6 billion years ago"}
+    title: {es: "Nace nuestro sistema solar", en: "Our solar system takes shape"}
+    location: {es: "Vía Láctea", en: "Milky Way"}
+    summary:
+      es: Una nube de gas y polvo da origen al Sol y al disco del que se forman los planetas. Es un proceso prolongado, no un acontecimiento ocurrido en un único año.
+      en: A cloud of gas and dust gives rise to the Sun and the disk from which the planets form. This is a prolonged process, not an event confined to a single year.
+    books: [cosmos]
+    source:
+      name: NASA — Solar System Facts
+      url: https://science.nasa.gov/solar-system/solar-system-facts/

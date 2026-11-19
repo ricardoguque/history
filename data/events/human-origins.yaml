@@ -1,0 +1,40 @@
+events:
+  - id: homo-sapiens
+    category: humanity
+    time: {kind: age, years: 300000, reference_year: 2000}
+    date: {es: "Hace unos 300 000 años", en: "About 300,000 years ago"}
+    title: {es: "Nuestra especie aparece en África", en: "Our species emerges in Africa"}
+    location: {es: "África", en: "Africa"}
+    summary:
+      es: Los fósiles atribuidos a Homo sapiens sitúan la historia de nuestra especie en África hace unos 300 000 años. La evolución humana fue ramificada y no una escalera que condujera inevitablemente a nosotros.
+      en: Fossils attributed to Homo sapiens place our species in Africa around 300,000 years ago. Human evolution was branching, not a ladder inevitably leading to us.
+    books: [dawn-everything]
+    source:
+      name: Smithsonian Human Origins — Homo sapiens
+      url: https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens
+  - id: white-sands
+    category: humanity
+    time: {kind: age, years: 23000, youngest_years: 21000, reference_year: 2000, range: uncertainty}
+    date: {es: "Hace unos 23 000–21 000 años", en: "About 23,000–21,000 years ago"}
+    title: {es: "Huellas humanas en White Sands", en: "Human footprints at White Sands"}
+    location: {es: "América del Norte, actual Nuevo México", en: "North America, present-day New Mexico"}
+    summary:
+      es: Huellas preservadas en sedimentos documentan presencia humana durante la última glaciación. Son evidencia de ocupación, no una fecha definitiva de la primera llegada de seres humanos a América.
+      en: Footprints preserved in sediments document human presence during the last ice age. They are evidence of occupation, not a definitive date for the first human arrival in the Americas.
+    books: [dawn-everything]
+    source:
+      name: US National Park Service — Fossilized Footprints
+      url: https://www.nps.gov/whsa/learn/nature/fossilized-footprints.htm
+  - id: agriculture
+    category: humanity
+    time: {kind: age, years: 12000, reference_year: 2000}
+    date: {es: "Desde hace unos 12 000 años", en: "From about 12,000 years ago"}
+    title: {es: "Cultivar cambia la relación con el mundo", en: "Farming changes our relationship with the world"}
+    location: {es: "Múltiples regiones; primeros focos en Asia sudoccidental", en: "Multiple regions; early centers in Southwest Asia"}
+    summary:
+      es: Diversas comunidades empiezan a producir alimentos mediante el cultivo y la domesticación. La transición ocurre en distintos momentos y lugares, sin sustituir de inmediato a la caza y la recolección.
+      en: Different communities begin producing food through cultivation and domestication. The transition happens at different times and places, without immediately replacing hunting and gathering.
+    books: [dawn-everything]
+    source:
+      name: Smithsonian Human Origins — Humans Change the World
+      url: https://humanorigins.si.edu/human-characteristics/humans-change-world

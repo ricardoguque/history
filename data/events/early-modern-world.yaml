@@ -1,0 +1,53 @@
+events:
+  - id: gutenberg-bible
+    category: early-modern
+    time: {kind: calendar, start: 1455, approximate: true}
+    date: {es: "Hacia 1455", en: "Around 1455"}
+    title: {es: "La Biblia de Gutenberg sale de la imprenta", en: "The Gutenberg Bible leaves the press"}
+    location: {es: "Maguncia, actual Alemania", en: "Mainz, present-day Germany"}
+    summary:
+      es: "La Biblia de Gutenberg marca un hito de la impresión con tipos móviles metálicos en Europa occidental. No es el origen mundial de la imprenta: Asia tenía tradiciones de impresión anteriores."
+      en: "The Gutenberg Bible marks a milestone in printing with movable metal type in Western Europe. It is not the worldwide origin of printing: Asia had earlier printing traditions."
+    books: [information]
+    source:
+      name: Library of Congress — The Gutenberg Bible
+      url: https://www.loc.gov/exhibits/bibles/the-gutenberg-bible.html
+  - id: caribbean-1492
+    category: early-modern
+    time: {kind: calendar, start: 1492}
+    date: {es: "1492", en: "1492"}
+    title: {es: "Un cruce atlántico de consecuencias globales", en: "An Atlantic crossing with global consequences"}
+    location: {es: "Caribe y Atlántico", en: "Caribbean and Atlantic"}
+    summary:
+      es: La expedición de Colón llega a islas del Caribe habitadas por pueblos indígenas. El viaje abre una etapa de contacto sostenido y expansión colonial europea; no supone el descubrimiento de un continente vacío.
+      en: Columbus's expedition reaches Caribbean islands inhabited by Indigenous peoples. The voyage opens an era of sustained contact and European colonial expansion, not the discovery of an empty continent.
+    books: [origins-modern-world]
+    source:
+      name: Library of Congress — Christopher Columbus, Man and Myth
+      url: https://www.loc.gov/exhibits/1492/columbus.html
+  - id: tokugawa
+    category: early-modern
+    time: {kind: calendar, start: 1603}
+    date: {es: "1603", en: "1603"}
+    title: {es: "Comienza el shogunato Tokugawa", en: "The Tokugawa shogunate begins"}
+    location: {es: "Japón", en: "Japan"}
+    summary:
+      es: Tokugawa Ieyasu recibe el título de shōgun e inicia un nuevo orden político. El periodo Edo combina estabilidad, jerarquías sociales y circuitos culturales y comerciales, no un aislamiento absoluto.
+      en: Tokugawa Ieyasu receives the title of shōgun and establishes a new political order. The Edo period combines stability, social hierarchies, and cultural and commercial networks, not absolute isolation.
+    books: [origins-modern-world]
+    source:
+      name: Encyclopaedia Britannica — Tokugawa period
+      url: https://www.britannica.com/event/Tokugawa-period
+  - id: principia
+    category: early-modern
+    time: {kind: calendar, start: 1687}
+    date: {es: "1687", en: "1687"}
+    title: {es: "Newton publica los Principia", en: "Newton publishes the Principia"}
+    location: {es: "Inglaterra", en: "England"}
+    summary:
+      es: Isaac Newton presenta una formulación matemática del movimiento y la gravitación. Su obra transforma la física y permite estudiar cómo se construyen, circulan y revisan las explicaciones científicas.
+      en: Isaac Newton presents a mathematical account of motion and gravitation. His work transforms physics and invites study of how scientific explanations are built, circulated, and revised.
+    books: [cosmos, brief-history-time]
+    source:
+      name: Cambridge Digital Library — Newton's annotated Principia
+      url: https://cudl.lib.cam.ac.uk/view/PR-ADV-B-00039-00001/1
