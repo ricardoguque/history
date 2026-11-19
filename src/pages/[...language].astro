@@ -1,0 +1,86 @@
+---
+import Atlas from '../components/Atlas.jsx';
+import { githubEditUrl, loadCatalog } from '../lib/catalog.js';
+import '../styles/global.css';
+
+export function getStaticPaths() {
+  return [
+    { params: { language: undefined }, props: { language: 'es' } },
+    { params: { language: 'en' }, props: { language: 'en' } },
+  ];
+}
+
+const { language } = Astro.props;
+const catalog = await loadCatalog();
+const editUrls = Object.fromEntries(['events', 'books', 'reading'].map((name) => [name, githubEditUrl(`data/${name}.yaml`)]));
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const isSpanish = language === 'es';
+---
+<!doctype html>
+<html lang={language} data-theme="ink">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={isSpanish ? 'Un atlas personal para explorar la historia y descubrir nuevas lecturas.' : 'A personal atlas for exploring history and discovering new books.'} />
+    <title>{isSpanish ? 'History — Un atlas personal del tiempo' : 'History — A personal atlas of time'}</title>
+    <script is:inline>
+      try {
+        const theme = localStorage.getItem('history-theme');
+        if (['ink', 'moss', 'plum'].includes(theme)) document.documentElement.dataset.theme = theme;
+      } catch (error) {
+        console.error('Unable to restore theme preference', error);
+        document.documentElement.dataset.themeStorageError = 'true';
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{isSpanish ? 'Saltar al contenido' : 'Skip to content'}</a>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href={isSpanish ? base : `${base}en/`}><span aria-hidden="true">✳</span> history<span class="wordmark-period">.</span></a>
+        <nav aria-label={isSpanish ? 'Navegación principal' : 'Main navigation'}>
+          <a href="#explore">{isSpanish ? 'Explorar' : 'Explore'}</a>
+          <a href="#library">{isSpanish ? 'Biblioteca' : 'Library'}</a>
+          <a class="github-nav" href="https://github.com/ricardoguque/history">GitHub ↗</a>
+        </nav>
+        <div class="preferences">
+          <label class="sr-only" for="theme">{isSpanish ? 'Tema oscuro' : 'Dark theme'}</label>
+          <select id="theme" name="theme">
+            <option value="ink">{isSpanish ? 'Tinta' : 'Ink'}</option>
+            <option value="moss">{isSpanish ? 'Musgo' : 'Moss'}</option>
+            <option value="plum">{isSpanish ? 'Ciruela' : 'Plum'}</option>
+          </select>
+          <a class="language-switch" href={isSpanish ? `${base}en/` : base} lang={isSpanish ? 'en' : 'es'} aria-label={isSpanish ? 'Switch to English' : 'Cambiar a español'}>{isSpanish ? 'EN' : 'ES'}</a>
+        </div>
+      </header>
+      <p id="theme-error" class="theme-error" role="status" hidden>{isSpanish ? 'No se pudo guardar o recuperar el tema en este navegador.' : 'Could not save or restore the theme in this browser.'}</p>
+      <main id="main">
+        <div class="prototype-note"><span>{isSpanish ? 'PROTOTIPO' : 'PROTOTYPE'}</span>{isSpanish ? 'Datos de muestra · edición y acceso gestionados por GitHub' : 'Sample data · editing and access managed by GitHub'}</div>
+        <Atlas {...catalog} editUrls={editUrls} language={language} client:load />
+      </main>
+      <footer>
+        <a class="wordmark" href={base}>history.</a>
+        <p>{isSpanish ? 'Un proyecto personal. Una curiosidad infinita.' : 'A personal project. An endless curiosity.'}</p>
+        <a href="https://github.com/ricardoguque/history">{isSpanish ? 'Ver el proyecto' : 'View project'} ↗</a>
+      </footer>
+    </div>
+    <script>
+      const select = document.querySelector('#theme');
+      const errorNotice = document.querySelector('#theme-error');
+      if (select instanceof HTMLSelectElement && errorNotice instanceof HTMLElement) {
+        select.value = document.documentElement.dataset.theme ?? 'ink';
+        errorNotice.hidden = document.documentElement.dataset.themeStorageError !== 'true';
+        select.addEventListener('change', () => {
+          document.documentElement.dataset.theme = select.value;
+          try {
+            localStorage.setItem('history-theme', select.value);
+            errorNotice.hidden = true;
+          } catch (error) {
+            console.error('Unable to save theme preference', error);
+            errorNotice.hidden = false;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

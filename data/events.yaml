@@ -1,0 +1,58 @@
+# Datos de muestra para probar la interfaz; no representan una cobertura completa.
+events:
+  - id: universe
+    category: cosmos
+    date:
+      es: Hace unos 13 800 millones de años
+      en: About 13.8 billion years ago
+    title:
+      es: El comienzo de todo
+      en: The beginning of everything
+    summary:
+      es: El universo observable comenzó a expandirse desde un estado extremadamente caliente y denso. Esta edad es una estimación científica, no una fecha de calendario.
+      en: The observable universe began expanding from an extremely hot, dense state. This age is a scientific estimate, not a calendar date.
+    source:
+      name: NASA — Universe
+      url: https://science.nasa.gov/universe/
+  - id: writing
+    category: humanity
+    date:
+      es: Hacia 3400–3200 a. C.
+      en: Around 3400–3200 BCE
+    title:
+      es: La memoria se convierte en escritura
+      en: Memory becomes writing
+    summary:
+      es: En Mesopotamia aparecen algunas de las primeras formas de escritura conocidas. Es un proceso gradual; no una invención universal ocurrida en un solo día.
+      en: Some of the earliest known forms of writing emerge in Mesopotamia. This is a gradual process, not a universal invention on a single day.
+    source:
+      name: The Metropolitan Museum of Art — The Origins of Writing
+      url: https://www.metmuseum.org/essays/the-origins-of-writing
+  - id: apollo-11
+    category: modern
+    date:
+      es: 20 de julio de 1969
+      en: July 20, 1969
+    title:
+      es: Otro mundo bajo nuestros pies
+      en: Another world beneath our feet
+    summary:
+      es: El módulo lunar del Apollo 11 aterriza en la Luna. La fecha corresponde al alunizaje, no al primer paso de Armstrong, que en UTC ocurrió el día 21.
+      en: Apollo 11's lunar module lands on the Moon. The date refers to the landing, not Armstrong's first step, which occurred on July 21 in UTC.
+    source:
+      name: NASA — Apollo 11
+      url: https://www.nasa.gov/mission/apollo-11/
+  - id: world-wide-web
+    category: modern
+    date:
+      es: Marzo de 1989
+      en: March 1989
+    title:
+      es: Un mundo de conexiones
+      en: A world of connections
+    summary:
+      es: Tim Berners-Lee presenta en el CERN una propuesta de gestión de información que dará origen a la World Wide Web. No debe confundirse con el origen de Internet.
+      en: Tim Berners-Lee submits an information management proposal at CERN that will lead to the World Wide Web. This is distinct from the origin of the Internet.
+    source:
+      name: CERN — The birth of the Web
+      url: https://home.cern/science/computing/birth-web

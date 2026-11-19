@@ -1,0 +1,16 @@
+# Recomendaciones de ejemplo, no fuentes específicas de las fechas anteriores.
+books:
+  - id: cosmos
+    title: Cosmos
+    author: Carl Sagan
+    year: 1980
+    description:
+      es: Una puerta de entrada a la historia del universo y a nuestra forma de conocerlo.
+      en: An introduction to the history of the universe and how we understand it.
+  - id: brief-history-time
+    title: A Brief History of Time
+    author: Stephen Hawking
+    year: 1988
+    description:
+      es: Una exploración divulgativa del espacio, el tiempo y las grandes preguntas de la cosmología.
+      en: A popular exploration of space, time, and the big questions of cosmology.
